@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATMSoftware
 {
-    class ATMSoftware
+    internal class ATMSoftware
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry;
             string starterATMcard = "4321 5703 4489 3400";
@@ -26,17 +22,16 @@ namespace ATMSoftware
             if (dob <= 2004)
             {
                 Console.WriteLine("Alright, " + ownerfirstname + ". I'll start you on Polestar's Convenience Checking Account.");
-                
             }
             else if (dob >= 2004)
             {
                 Console.WriteLine("Alright, " + ownerfirstname + ", I'll start you on Polestar's Junior Checking Account.");
                 Console.WriteLine("When you turn 18, you're account will automatically change to our Convenience Account.");
             }
-            Console.WriteLine("I'll need your 9-digit social security number in order to activate your account, " + ownerfirstname  + " " + ownerlastname + ".");
+            Console.WriteLine("I'll need your 9-digit social security number in order to activate your account, " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Please type it like so: XXX-XX-XXXX");
             ssn = Console.ReadLine();
-            
+
             do
             {
                 Console.WriteLine("Confirm that for me please, " + ownerfirstname + ".");
