@@ -11,7 +11,7 @@ namespace ATMSoftware
         static void Main(string[] args)
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn;
-            int dob;
+            int dob, bankpin, bankpinconfirm;
             long telephonenumber;
 
             Console.WriteLine("Welcome to Polestar National Bank. I see you're new here. Let's open an account for you...");
@@ -42,9 +42,14 @@ namespace ATMSoftware
             }
             while (confirmssn != ssn);
 
-            Console.WriteLine("");
-
-
+            Console.WriteLine("Great! Oh and one more thing...you're pin!");
+            Console.WriteLine("Use any four numbers you like: "); bankpin = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Confirm your pin please: "); bankpinconfirm = Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Please repeat your pin correctly.");
+            }
+            while (bankpin != bankpinconfirm);
         }
     }
 }
