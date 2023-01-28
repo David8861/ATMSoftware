@@ -53,18 +53,27 @@ namespace ATMSoftware
             while (confirmssn != ssn);
 
             Console.WriteLine("Great! Oh and one more thing...you're pin!");
-            Console.WriteLine("Use any four numbers you like: "); bankpin = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Use any four numbers you like: ");
+            Console.ForegroundColor = ConsoleColor.Black;
+            bankpin = Convert.ToInt32(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.White;
             do
             {
-                Console.WriteLine("Confirm your pin please: "); bankpinconfirm = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Confirm your pin please: ");
+                Console.ForegroundColor = ConsoleColor.Black;
+                bankpinconfirm = Convert.ToInt32(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.White;
                 if (bankpinconfirm == bankpin)
                 {
                     continue;
                 }
                 if (bankpinconfirm != bankpin)
                 {
-                    Console.WriteLine("You must comfirm your pin, " + ownerfirstname + " " + ownerlastname + ".");
+                    Console.WriteLine("You must confirm your pin, " + ownerfirstname + " " + ownerlastname + ".");
+                    Console.ForegroundColor = ConsoleColor.Black;
                     banktryagain = Convert.ToInt32(Console.ReadLine());
+                    Console.ForegroundColor = ConsoleColor.White;
+
                     if (banktryagain == bankpin)
                     {
                         break;
@@ -77,13 +86,17 @@ namespace ATMSoftware
             Console.WriteLine("Here is your ATM card, " + ownerfirstname + ": " + starterATMcard + ".");
             Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Address: " + address + "."); Console.Write("Phone Number: " + telephonenumber + ".");
-            Console.WriteLine("Date of Birth: " + dob + "."); Console.Write("Social Security Number: " + ssn + ".");
+            Console.WriteLine("Date of Birth: " + dob + "."); Console.WriteLine("Social Security Number: " + ssn + ".");
 
             Console.WriteLine("Let's verify your identity.");
             
             do
             {
-                Console.WriteLine("What is your Pin number?"); pinverification = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is your Pin number?");
+                Console.ForegroundColor = ConsoleColor.Black;
+                pinverification = Convert.ToInt32(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.White;
+
                 if (pinverification == bankpin)
                 {
                     continue;
@@ -91,11 +104,13 @@ namespace ATMSoftware
                 if (pinverification != bankpin)
                 {
                     Console.WriteLine("Access Denied!");
+                    return;
                 }
             }
             while (bankpin != pinverification);
 
-            Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together. What do you need?");
+            Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together.");
+            Console.WriteLine("Type \"Check Balance\" to see the funds in your account. Type \"Withdraw\" to withdraw funds. Or type \"Deposit\" to deposit funds.");
         }
     }
 }
