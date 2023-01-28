@@ -10,14 +10,14 @@ namespace ATMSoftware
     {
         static void Main(string[] args)
         {
-            string accountowner, address;
+            string accountowner, address, ssn;
             int dob;
-            long telephonenumber, ssn;
+            long telephonenumber;
 
             Console.WriteLine("Welcome to Polestar National Bank. I see you're new here. Let's open an account for you...");
             Console.WriteLine("Polestar is dedicated to providing you fast, secure banking.");
             Console.WriteLine("What's your name?"); accountowner = Console.ReadLine();
-            Console.WriteLine("Okay " + accountowner + ". I'll need your address next."); address = Console.ReadLine();
+            Console.WriteLine("Okay " + accountowner + ". I'll need your address."); address = Console.ReadLine();
             Console.WriteLine("Great. Your phone number next..."); telephonenumber = Convert.ToInt64(Console.ReadLine());
             Console.WriteLine("Last, I'll need your date of birth."); dob = Convert.ToInt32(Console.ReadLine());
             if (dob <= 2004)
@@ -32,7 +32,8 @@ namespace ATMSoftware
             }
             Console.WriteLine("I'll need your 9-digit social security number in order to activate your account, " + accountowner + ".");
             Console.WriteLine("Please type it like so: XXX-XX-XXXX");
-            ssn = Convert.ToInt64(Console.ReadLine());
+            ssn = Console.ReadLine();
+
 
 
         }
