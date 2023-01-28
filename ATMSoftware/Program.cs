@@ -6,18 +6,17 @@ namespace ATMSoftware
     {
         private static void Main(string[] args)
         {
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry;
+            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber;
             string starterATMcard = "4321 5703 4489 3400";
             int dob, bankpin, bankpinconfirm, banktryagain, pinverification;
             int newaccountgift = 150;
-            long telephonenumber;
 
             Console.WriteLine("Welcome to Polestar National Bank. I see you're new here. Let's open an account for you...");
             Console.WriteLine("Polestar is dedicated to providing you fast, secure banking.");
             Console.WriteLine("What's your first name?"); ownerfirstname = Console.ReadLine();
             Console.WriteLine("And your last?"); ownerlastname = Console.ReadLine();
             Console.WriteLine("Okay " + ownerfirstname + ". I'll need your address."); address = Console.ReadLine();
-            Console.WriteLine("Great. Your phone number next..."); telephonenumber = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("Great. Your phone number next. This format works: (XXX)-XXX-XXXX"); telephonenumber = Console.ReadLine();
             Console.WriteLine("Last, I'll need your date of birth."); dob = Convert.ToInt32(Console.ReadLine());
             if (dob <= 2004)
             {
