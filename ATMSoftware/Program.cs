@@ -8,7 +8,7 @@ namespace ATMSoftware
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry;
             string starterATMcard = "4321 5703 4489 3400";
-            int dob, bankpin, bankpinconfirm;
+            int dob, bankpin, bankpinconfirm, banktryagain;
             int newaccountgift = 150;
             long telephonenumber;
 
@@ -55,17 +55,29 @@ namespace ATMSoftware
 
             Console.WriteLine("Great! Oh and one more thing...you're pin!");
             Console.WriteLine("Use any four numbers you like: "); bankpin = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Confirm your pin please: "); bankpinconfirm = Convert.ToInt32(Console.ReadLine());
             do
             {
-                Console.WriteLine("Please repeat your pin correctly.");
+                Console.WriteLine("Confirm your pin please: "); bankpinconfirm = Convert.ToInt32(Console.ReadLine());
+                if (bankpinconfirm == bankpin)
+                {
+                    continue;
+                }
+                if (bankpinconfirm != bankpin)
+                {
+                    Console.WriteLine("You must comfirm your pin, " + ownerfirstname + " " + ownerlastname + ".");
+                    banktryagain = Convert.ToInt32(Console.ReadLine());
+                    if (banktryagain == bankpin)
+                    {
+                        break;
+                    }
+                }
             }
             while (bankpin != bankpinconfirm);
 
             Console.WriteLine("Before we give you a Polestar ATM card, we would like to gift you $" + newaccountgift + " for opening an account with us today!");
-            Console.WriteLine("Here is your ATM card, " + ownerfirstname + ": " + starterATMcard);
+            Console.WriteLine("Here is your ATM card, " + ownerfirstname + ": " + starterATMcard + ".");
             Console.WriteLine("Remember, you can change this card whenever you like.");
-            Console.WriteLine("Account Information for " + ownerfirstname + "  " + ownerlastname + ".");
+            Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Address: " + address + ".");
             Console.WriteLine("Phone Number: " + telephonenumber + ".");
             Console.WriteLine("Date of Birth: " + dob + ".");
