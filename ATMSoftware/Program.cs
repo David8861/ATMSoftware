@@ -10,7 +10,7 @@ namespace ATMSoftware
     {
         static void Main(string[] args)
         {
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn;
+            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry;
             string starterATMcard = "4321 5703 4489 3400";
             int dob, bankpin, bankpinconfirm;
             int newaccountgift = 150;
@@ -36,11 +36,25 @@ namespace ATMSoftware
             Console.WriteLine("I'll need your 9-digit social security number in order to activate your account, " + ownerfirstname  + " " + ownerlastname + ".");
             Console.WriteLine("Please type it like so: XXX-XX-XXXX");
             ssn = Console.ReadLine();
-            Console.WriteLine("Confirm that for me please, " + ownerfirstname + ".");
-            confirmssn = Console.ReadLine();
+            
             do
             {
-                Console.WriteLine("Sorry, that won't work. Please try again.");
+                Console.WriteLine("Confirm that for me please, " + ownerfirstname + ".");
+                confirmssn = Console.ReadLine();
+
+                if (confirmssn == ssn)
+                {
+                    continue;
+                }
+                if (confirmssn != ssn)
+                {
+                    Console.WriteLine("Nope. Try again!");
+                    ssnretry = Console.ReadLine();
+                    if (ssnretry == ssn)
+                    {
+                        break;
+                    }
+                }
             }
             while (confirmssn != ssn);
 
