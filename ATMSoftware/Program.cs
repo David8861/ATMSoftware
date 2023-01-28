@@ -10,7 +10,7 @@ namespace ATMSoftware
     {
         static void Main(string[] args)
         {
-            string accountowner, address, ssn;
+            string accountowner, address, ssn, confirmssn;
             int dob;
             long telephonenumber;
 
@@ -33,7 +33,15 @@ namespace ATMSoftware
             Console.WriteLine("I'll need your 9-digit social security number in order to activate your account, " + accountowner + ".");
             Console.WriteLine("Please type it like so: XXX-XX-XXXX");
             ssn = Console.ReadLine();
+            Console.WriteLine("Confirm that for me please, " + accountowner + ".");
+            confirmssn = Console.ReadLine();
+            do
+            {
+                Console.WriteLine("Sorry, that won't work. Please try again.");
+            }
+            while (confirmssn != ssn);
 
+            Console.WriteLine("");
 
 
         }
