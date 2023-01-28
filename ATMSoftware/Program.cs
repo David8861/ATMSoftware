@@ -8,7 +8,7 @@ namespace ATMSoftware
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry;
             string starterATMcard = "4321 5703 4489 3400";
-            int dob, bankpin, bankpinconfirm, banktryagain;
+            int dob, bankpin, bankpinconfirm, banktryagain, pinverification;
             int newaccountgift = 150;
             long telephonenumber;
 
@@ -76,12 +76,27 @@ namespace ATMSoftware
 
             Console.WriteLine("Before we give you a Polestar ATM card, we would like to gift you $" + newaccountgift + " for opening an account with us today!");
             Console.WriteLine("Here is your ATM card, " + ownerfirstname + ": " + starterATMcard + ".");
-            Console.WriteLine("Remember, you can change this card whenever you like.");
             Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
-            Console.WriteLine("Address: " + address + ".");
-            Console.WriteLine("Phone Number: " + telephonenumber + ".");
-            Console.WriteLine("Date of Birth: " + dob + ".");
-            Console.WriteLine("Social Security Number: " + ssn + ".");
+            Console.WriteLine("Address: " + address + "."); Console.Write("Phone Number: " + telephonenumber + ".");
+            Console.WriteLine("Date of Birth: " + dob + "."); Console.Write("Social Security Number: " + ssn + ".");
+
+            Console.WriteLine("Let's verify your identity.");
+            
+            do
+            {
+                Console.WriteLine("What is your Pin number?"); pinverification = Convert.ToInt32(Console.ReadLine());
+                if (pinverification == bankpin)
+                {
+                    continue;
+                }
+                if (pinverification != bankpin)
+                {
+                    Console.WriteLine("Access Denied!");
+                }
+            }
+            while (bankpin != pinverification);
+
+            Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together. What do you need?");
         }
     }
 }
