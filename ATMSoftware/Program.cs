@@ -12,6 +12,7 @@ namespace ATMSoftware
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn;
             int dob, bankpin, bankpinconfirm;
+            int newaccountgift = 150;
             long telephonenumber;
 
             Console.WriteLine("Welcome to Polestar National Bank. I see you're new here. Let's open an account for you...");
@@ -50,6 +51,9 @@ namespace ATMSoftware
                 Console.WriteLine("Please repeat your pin correctly.");
             }
             while (bankpin != bankpinconfirm);
+
+            Console.WriteLine("Before we give you an ATM card, we would like to gift you $" + newaccountgift + " for opening an account with us today!");
+            Console.WriteLine("");
         }
     }
 }
