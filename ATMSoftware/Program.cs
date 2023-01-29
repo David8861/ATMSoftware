@@ -83,13 +83,13 @@ namespace ATMSoftware
             while (bankpin != bankpinconfirm);
 
             Console.WriteLine("Before we give you an ATM card, we would like to gift you $" + newaccountgift + " for opening an account with us!");
-            Console.WriteLine("Your ATM card, " + ownerfirstname + ": " + starterATMcard + ".");
+            Console.WriteLine("Your ATM card number, " + ownerfirstname + ": " + starterATMcard + ".");
             Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Address: " + address + "."); Console.Write("Phone Number: " + telephonenumber + ".");
             Console.WriteLine("Date of Birth: " + dob + "."); Console.WriteLine("Social Security Number: " + ssn + ".");
 
             Console.WriteLine("Let's verify your identity.");
-            
+
             do
             {
                 Console.WriteLine("What is your pin number?");
@@ -112,7 +112,18 @@ namespace ATMSoftware
             Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together.");
             Console.WriteLine("Type \"Check Balance\" to see the funds in your account. Type \"Withdraw\" to withdraw funds. Or type \"Deposit\" to deposit funds.");
             accountchoice = Console.ReadLine();
+            if (accountchoice == "Check Balance")
+            {
 
+            }
+            if (accountchoice == "Deposit")
+            {
+
+            }
+            if (accountchoice == "Withdraw")
+            {
+
+            }
         }
     }
 }
