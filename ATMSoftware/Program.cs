@@ -115,7 +115,7 @@ namespace ATMSoftware
             do
             {
                 Console.WriteLine(ownerfirstname + " " + ownerlastname + ", your current balance is " + newaccountgift + ".");
-                continue;
+                break;
             }
             while (accountchoice == "Check Balance");
             do
