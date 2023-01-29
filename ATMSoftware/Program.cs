@@ -8,7 +8,7 @@ namespace ATMSoftware
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
             string starterATMcard = "4321 5703 4489 3400";
-            int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount;
+            int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount, withdrawamount;
             int newaccountgift = 150;
 
             Console.WriteLine("Welcome to Polestar National Bank. Let's open an account for you...");
@@ -126,14 +126,14 @@ namespace ATMSoftware
                 break;
             }
             while (accountchoice == "Deposit");
-            if (accountchoice == "Deposit")
+            do
             {
-
+                Console.WriteLine("How much would you like to withdraw?");
+                withdrawamount = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("You withdrew " + withdrawamount + ". Your account currently has " + (withdrawamount - newaccountgift) + ", left.");
+                break;
             }
-            if (accountchoice == "Withdraw")
-            {
-
-            }
+            while (accountchoice == "Withdraw");
         }
     }
 }
