@@ -123,7 +123,7 @@ namespace ATMSoftware
                 Console.WriteLine("How much would you like to deposit?");
                 depositamount = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Your new balance is: " + (depositamount + newaccountgift));
-                continue;
+                
             }
             while (accountchoice == "Deposit");
             if (accountchoice == "Deposit")
