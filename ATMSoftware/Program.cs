@@ -2,16 +2,16 @@
 
 namespace ATMSoftware
 {
-    internal class ATMSoftware
+    public class ATMSoftware
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
             string starterATMcard = "4321 5703 4489 3400";
             int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount, withdrawamount;
             int newaccountgift = 150;
 
-            Console.WriteLine("Welcome to Polestar National Bank. Let's open an account for you...");
+            Console.WriteLine("Welcome to Polestar National Bank. Let's open an account for you..");
             Console.WriteLine("Polestar is dedicated to providing you fast, secure banking.");
             Console.WriteLine("What's your first name?"); ownerfirstname = Console.ReadLine();
             Console.WriteLine("And your last?"); ownerlastname = Console.ReadLine();
