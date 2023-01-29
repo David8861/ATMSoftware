@@ -6,7 +6,7 @@ namespace ATMSoftware
     {
         private static void Main(string[] args)
         {
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
+            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice, deposit;
             string starterATMcard = "4321 5703 4489 3400";
             int dob, bankpin, bankpinconfirm, banktryagain, pinverification;
             int newaccountgift = 150;
@@ -114,7 +114,17 @@ namespace ATMSoftware
             accountchoice = Console.ReadLine();
             if (accountchoice == "Check Balance")
             {
-
+                Console.WriteLine(ownerfirstname + " " + ownerlastname + ", your current balance is " + newaccountgift + ".");
+                Console.WriteLine("Would you like to deposit?"); deposit = Console.ReadLine();
+                if (deposit == "yes")
+                {
+                    Console.WriteLine("How much?");
+                }
+                if (deposit == "no")
+                {
+                    Console.WriteLine("Exiting...");
+                    
+                }
             }
             if (accountchoice == "Deposit")
             {
