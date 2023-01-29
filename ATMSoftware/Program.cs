@@ -6,9 +6,9 @@ namespace ATMSoftware
     {
         private static void Main(string[] args)
         {
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice, deposit;
+            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
             string starterATMcard = "4321 5703 4489 3400";
-            int dob, bankpin, bankpinconfirm, banktryagain, pinverification;
+            int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount;
             int newaccountgift = 150;
 
             Console.WriteLine("Welcome to Polestar National Bank. Let's open an account for you...");
@@ -112,20 +112,20 @@ namespace ATMSoftware
             Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together.");
             Console.WriteLine("Type \"Check Balance\" to see the funds in your account. Type \"Withdraw\" to withdraw funds. Or type \"Deposit\" to deposit funds.");
             accountchoice = Console.ReadLine();
-            if (accountchoice == "Check Balance")
+            do
             {
                 Console.WriteLine(ownerfirstname + " " + ownerlastname + ", your current balance is " + newaccountgift + ".");
-                Console.WriteLine("Would you like to deposit?"); deposit = Console.ReadLine();
-                if (deposit == "yes")
-                {
-                    Console.WriteLine("How much?");
-                }
-                if (deposit == "no")
-                {
-                    Console.WriteLine("Exiting...");
-                    
-                }
+                continue;
             }
+            while (accountchoice == "Check Balance");
+            do
+            {
+                Console.WriteLine("How much would you like to deposit?");
+                depositamount = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Your new balance is: " + (depositamount + newaccountgift));
+                continue;
+            }
+            while (accountchoice == "Deposit");
             if (accountchoice == "Deposit")
             {
 
