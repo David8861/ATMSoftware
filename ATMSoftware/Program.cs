@@ -2,7 +2,7 @@
 
 namespace ATMSoftware
 {
-    public class ATMSoftware
+    public static class ATMSoftware
     {
         public static void Main(string[] args)
         {
