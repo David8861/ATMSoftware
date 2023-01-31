@@ -2,9 +2,9 @@
 
 namespace ATMSoftware
 {
-    public static class Banking
+    class Banking
     {
-        public static void Main(string[] args)
+        public static void banking()
         {
             int bankpin, pinverification, depositamount, withdrawamount;
             int newaccountgift = 150;
