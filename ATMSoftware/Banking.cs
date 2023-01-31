@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATMSoftware
 {
@@ -10,11 +6,9 @@ namespace ATMSoftware
     {
         public static void Main(string[] args)
         {
-            int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount, withdrawamount;
+            int bankpin, pinverification, depositamount, withdrawamount;
             int newaccountgift = 150;
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
-            string starterATMcard = "4321 5703 4489 3400";
-
+            string accountchoice;
 
             Console.WriteLine("Let's verify your identity.");
 

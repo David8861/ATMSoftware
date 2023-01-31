@@ -6,9 +6,9 @@ namespace ATMSoftware
     {
         public static void Main(string[] args)
         {
-            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber, accountchoice;
+            string ownerfirstname, ownerlastname, address, ssn, confirmssn, ssnretry, telephonenumber;
             string starterATMcard = "4321 5703 4489 3400";
-            int dob, bankpin, bankpinconfirm, banktryagain, pinverification, depositamount, withdrawamount;
+            int dob, bankpin, bankpinconfirm, banktryagain;
             int newaccountgift = 150;
 
             Console.WriteLine("Welcome to Polestar National Bank. Let's open an account for you..");
@@ -87,53 +87,6 @@ namespace ATMSoftware
             Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Address: " + address + "."); Console.Write("Phone Number: " + telephonenumber + ".");
             Console.WriteLine("Date of Birth: " + dob + "."); Console.WriteLine("Social Security Number: " + ssn + ".");
-
-            Console.WriteLine("Let's verify your identity.");
-
-            do
-            {
-                Console.WriteLine("What is your pin number?");
-                Console.ForegroundColor = ConsoleColor.Black;
-                pinverification = Convert.ToInt32(Console.ReadLine());
-                Console.ForegroundColor = ConsoleColor.White;
-
-                if (pinverification == bankpin)
-                {
-                    continue;
-                }
-                if (pinverification != bankpin)
-                {
-                    Console.WriteLine("Access Denied!");
-                    return;
-                }
-            }
-            while (bankpin != pinverification);
-
-            Console.WriteLine(ownerfirstname + ", we are here to make banking safer, together.");
-            Console.WriteLine("Type \"Check Balance\" to see the funds in your account. Type \"Withdraw\" to withdraw funds. Or type \"Deposit\" to deposit funds.");
-            accountchoice = Console.ReadLine();
-            do
-            {
-                Console.WriteLine(ownerfirstname + " " + ownerlastname + ", your current balance is " + newaccountgift + ".");
-                break;
-            }
-            while (accountchoice == "Check Balance");
-            do
-            {
-                Console.WriteLine("How much would you like to deposit?");
-                depositamount = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Your new balance is: " + (depositamount + newaccountgift));
-                break;
-            }
-            while (accountchoice == "Deposit");
-            do
-            {
-                Console.WriteLine("How much would you like to withdraw?");
-                withdrawamount = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("You withdrew " + withdrawamount + ". Your account currently has " + (withdrawamount - newaccountgift) + ", left.");
-                break;
-            }
-            while (accountchoice == "Withdraw");
         }
     }
 }
