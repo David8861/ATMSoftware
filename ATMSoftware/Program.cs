@@ -87,6 +87,9 @@ namespace ATMSoftware
             Console.WriteLine("Account Information for " + ownerfirstname + " " + ownerlastname + ".");
             Console.WriteLine("Address: " + address + "."); Console.Write("Phone Number: " + telephonenumber + ".");
             Console.WriteLine("Date of Birth: " + dob + "."); Console.WriteLine("Social Security Number: " + ssn + ".");
+
+            Banking.banking();
         }
+
     }
 }
